@@ -6,18 +6,17 @@ public class Ejercicio1{
         int num = sc.nextInt();
         System.out.println(invertir(num));
     }
-    //método que devuelve la suma de los elementos desde n hasta 1
-    //ejemplo: n = 4 -> 4+3+2+1=10
+
     public static int invertir(int num){
         if (num < 10){
             return num;
         }else{
+            //cant representa la cantidad de numeros despus del primero es decir la cantidad de numero de n - 1
             cant = 0;
             n = num;
             while(n > 9){
                 n = n / 10;
                 cant++;
-                System.out.println(cant + "  n es " + n );
             }
             return (num % 10)* (int)Math.pow(10, cant) + invertir(num / 10);
         }
