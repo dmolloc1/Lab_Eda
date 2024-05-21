@@ -2,11 +2,12 @@
 import java.util.*;
 public class Ejercicio02 {
     static boolean esOrdenado;
+    static int pivot;
     static boolean noOrdenado;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
-        System.out.println(esAscendenteDescendente(num));
+        
         if(noOrdenado){
             System.out.println("No esta ordenado");
         }else{
@@ -19,23 +20,20 @@ public class Ejercicio02 {
         
     }
     public static int esAscendenteDescendente(int num){
-        if(num == -1){
-            return -1;
-        }
         if (num < 10){
             return num;
+        }
+        pivot = esAscendenteDescendente(num / 10);
+        if(num <= 99){
+            esOrdenado = num % 10 > pivot;
+            //si esOrdenado es true significa que es ascendente si es false es descendente
+            return pivot;
         }else{
-            if(num < 99){
-                esOrdenado = num % 10 > esAscendenteDescendente(num / 10);
-                //si esOrdenado es true significa que es ascendente si es false es descendente
-            }else{
-                if(((num % 10) > esAscendenteDescendente(num / 10)) != esOrdenado){
+            
+            if(((num % 10) > pivot) != esOrdenado){
                 noOrdenado = true;
-                return -1;
-                
-                }else{
-                    return esAscendenteDescendente(num / 10);
-                }
+            }else{
+                return pivot;
             }
         }
         return -1;
