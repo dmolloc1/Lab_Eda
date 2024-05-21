@@ -1,12 +1,14 @@
 //• Crea un método que compruebe si un número está ordenado de forma decreciente y creciente
 import java.util.*;
 public class Ejercicio02 {
-    static boolean esOrdenado;
+    static boolean esOrdenado;// True = ascendente , False = descendente
+    static boolean noOrdenado;//parametro que indique cuando una lista no esta ordenada
     static int pivot;
-    static boolean noOrdenado;
+    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
+        esAscendenteDescendente(num);
         
         if(noOrdenado){
             System.out.println("No esta ordenado");
@@ -24,18 +26,13 @@ public class Ejercicio02 {
             return num;
         }
         pivot = esAscendenteDescendente(num / 10);
+        //se define el valor de esOrdenado en la primera comparacion de numeros
         if(num <= 99){
             esOrdenado = num % 10 > pivot;
-            //si esOrdenado es true significa que es ascendente si es false es descendente
-            return pivot;
         }else{
-            
             if(((num % 10) > pivot) != esOrdenado){
                 noOrdenado = true;
-            }else{
-                return pivot;
-            }
         }
-        return -1;
+        return pivot;//retorna la variable recursiva esAscendenteDescendente(num / 10);
     }
 }
