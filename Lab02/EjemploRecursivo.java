@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class EjemploRecursivo {
     static int medio ;
         public static void main(String[] args) {
