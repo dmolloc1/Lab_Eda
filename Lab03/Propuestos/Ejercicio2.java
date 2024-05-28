@@ -1,5 +1,4 @@
 public class Ejercicio2{
-    static int mitada;
     public static void main(String[] args) {
         int[] arr = {11, 22, 4, 74, 5, 16, 700, 8, 10, 1000, 0};
         System.out.println("El número menor del array es : " + minimo(arr, 0, arr.length - 1));
