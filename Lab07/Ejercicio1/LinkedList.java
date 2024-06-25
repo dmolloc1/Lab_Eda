@@ -5,8 +5,7 @@ elementos de la lista.
 • Añade un método a la clase ListaEnlazada para eliminar un nodo específico de la lista enlazada.
 • Añade un método a la clase ListaEnlazada para buscar un nodo específico en la lista enlazada. 
  */
-
- public class LinkedList<E> {
+public class LinkedList<E> {
     private Node<E> head;
 
     public LinkedList(){
@@ -58,10 +57,11 @@ elementos de la lista.
     }
 
     public String toString() {
-        String str = "";
+        String str = "" + this.head.toString();
         Node<E> i = this.head;
-        for (; i != null; i = i.getNext()) {
-          str += i.toString() + ", ";
+        while(i.getNext() != null){
+            str += ", " + i.getNext().toString();
+            i = i.getNext();
         }
         return str;
     }
