@@ -24,18 +24,7 @@ public class LinkedListInteger {
             pivot.setNext(nod);
         }
     }
-
-    public Integer search(Integer x) {
-        if (this.head == null) return null;
-
-        Node<Integer> pivot = this.head;
-        while (pivot != null && !pivot.getData().equals(x)) {
-            pivot = pivot.getNext();
-        }
-
-        return (pivot != null) ? pivot.getData() : null;
-    }
-
+    //Método que elimina todos los números mayores que
     public void removeGreaterThan(Integer x) {
         if (this.head == null) return;
 
@@ -56,7 +45,7 @@ public class LinkedListInteger {
     public boolean isEmpty() {
         return this.head == null;
     }
-
+//Método para mostrar la lista
     public String toString() {
         String str = "" + this.head.toString();
         Node<Integer> i = this.head;
