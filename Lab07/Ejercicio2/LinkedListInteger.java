@@ -24,6 +24,7 @@ public class LinkedListInteger {
             pivot.setNext(nod);
         }
     }
+<<<<<<< HEAD
     public void insert (E x){
         Node<Integer> nod = new Node<>(x);
 
@@ -42,6 +43,9 @@ public class LinkedListInteger {
         }
     }
 //Metodo para eliminar todos los elementos mayores que 
+=======
+    //Método que elimina todos los números mayores que
+>>>>>>> 1ec5c434a0b5b361cab7111b94c978dd756f41ec
     public void removeGreaterThan(Integer x) {
         if (this.head == null) return;
 
@@ -62,8 +66,12 @@ public class LinkedListInteger {
     public boolean isEmpty() {
         return this.head == null;
     }
+<<<<<<< HEAD
 
 //Metodo para mostrar la lista
+=======
+//Método para mostrar la lista
+>>>>>>> 1ec5c434a0b5b361cab7111b94c978dd756f41ec
     public String toString() {
         String str = "" + this.head.toString();
         Node<Integer> i = this.head;
