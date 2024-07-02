@@ -24,18 +24,24 @@ public class LinkedListInteger {
             pivot.setNext(nod);
         }
     }
+    public void insert (E x){
+        Node<Integer> nod = new Node<>(x);
 
-    public Integer search(Integer x) {
-        if (this.head == null) return null;
+        if(isEmpty()){
+           this.head = nod;
+        }else{
+            Node<Integer> pivot = this.head;
+            while (pivot.getNext() != null) {
+                pivot = pivot.getNext();
+            }
+            nod.setBack(pivot);
+            nod.setNext(pivot.getNext());
+            pivot.setNext(nod);
+            
 
-        Node<Integer> pivot = this.head;
-        while (pivot != null && !pivot.getData().equals(x)) {
-            pivot = pivot.getNext();
         }
-
-        return (pivot != null) ? pivot.getData() : null;
     }
-
+//Metodo para eliminar todos los elementos mayores que 
     public void removeGreaterThan(Integer x) {
         if (this.head == null) return;
 
@@ -57,6 +63,7 @@ public class LinkedListInteger {
         return this.head == null;
     }
 
+//Metodo para mostrar la lista
     public String toString() {
         String str = "" + this.head.toString();
         Node<Integer> i = this.head;
@@ -80,6 +87,6 @@ public class LinkedListInteger {
         list.removeGreaterThan(200);
         
         System.out.println("Lista después de eliminar valores mayores a 200:");
-        System.out.println(list);
+        System.out.println(list.toString());
     }
 }
