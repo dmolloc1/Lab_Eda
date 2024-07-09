@@ -36,29 +36,6 @@ public class ArbolBinario<E extends Comparable<E>> {
         }
     }
 
-    public String inOrder() {
-        return inOrderTree(this.root);
-    }
-
-    private String inOrderTree(Node<E> actual) {
-        if (actual == null) {
-            return "";
-        } else {
-            return inOrderTree(actual.getLeft()) + actual.getData() + " " + inOrderTree(actual.getRight());
-        }
-    }
-
-    public static void main(String[] args) {
-        ArbolBinario<Integer> a = new ArbolBinario<>();
-
-        a.add(3);
-        a.add(4);
-        a.add(6);
-        a.add(8);
-        a.add(30);
-        a.add(40);
-        a.add(60);
-        a.add(80);
-        System.out.println(a.inOrder());
-    }
+        
+    
 }

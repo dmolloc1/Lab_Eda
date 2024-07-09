@@ -28,7 +28,7 @@ public class ArbolBinario1<E extends Comparable<E>> extends ArbolBinario<E> {
         }
     } 
 
-//Método PostOrden;
+//Método PostOrden
     public String postOrder(){
         return postOrderTree(this.root);
     }
@@ -39,5 +39,23 @@ public class ArbolBinario1<E extends Comparable<E>> extends ArbolBinario<E> {
         }else{
             return postOrderTree(actual.getLeft()) + postOrderTree(actual.getRight()) + actual.getData() + " " ;
         }
+    }
+
+    public static void main(String[] args) {
+        //Métodos para mostrar un árbol binario inorden, preorden, postorden
+        ArbolBinario1<Integer> b1 = new ArbolBinario1<>();
+
+        b1.add(3);
+        b1.add(4);
+        b1.add(6);
+        b1.add(8);
+        b1.add(30);
+        b1.add(40);
+        b1.add(60);
+        b1.add(80);
+        System.out.println(b1.inOrder());
+        System.out.println(b1.preOrder());
+        System.out.println(b1.postOrder());
+
     }
 }

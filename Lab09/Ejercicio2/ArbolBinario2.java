@@ -1,5 +1,6 @@
 package Ejercicio2;
-import arbol.*;
+import arbol.ArbolBinario;
+import arbol.Node;
 
 public class ArbolBinario2<E extends Comparable<E>> extends ArbolBinario<E> {
     public ArbolBinario2 (){
@@ -17,5 +18,21 @@ public class ArbolBinario2<E extends Comparable<E>> extends ArbolBinario<E> {
 
             return Math.max(der, izq) + 1;
         }
+    }
+
+    public static void main(String[] args) {
+        ArbolBinario2<Integer> b2 = new ArbolBinario2<>();
+
+        b2.add(3);
+        b2.add(4);
+        b2.add(6);
+        b2.add(8);
+        b2.add(30);
+        b2.add(40);
+        b2.add(60);
+        b2.add(80);
+
+        System.out.println("Altura: " + b2.height());
+
     }
 }
